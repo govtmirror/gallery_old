@@ -1,1 +1,1 @@
-{"meta": {"sunpy": "0.3.2"}, "sections": {"basics": ["01-hello_sunpy"]}}
+{"sections": {"lightcurves": ["GOES_lightcurve"], "basics": ["aia_plot"]}, "meta": {"sunpy": "0.3.2"}}

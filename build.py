@@ -60,9 +60,9 @@ def main():
             # Generate HTML and thumbnail image
             convert_notebook(filepath)
             extract_notebook_thumbnail(filepath)
+        os.chdir('..')
 
     # Output gallery as JSON
-    os.chdir('..')
     gallery_json = json.dumps(gallery)
 
     with open('gallery.json', 'w') as fp:
