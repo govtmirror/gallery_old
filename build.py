@@ -35,7 +35,8 @@ def main():
         os.chdir(directory)
 
         # Section title
-        section_name = directory.replace("_", " ").title()
+        #section_name = directory.replace("_", " ").title()
+        section_name = directory
         gallery[section_name] = []
 
         print("=" * 40)
