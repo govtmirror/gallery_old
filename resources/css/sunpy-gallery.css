@@ -1,6 +1,9 @@
 /**
  * SunPy Gallery Styles
  */
+#sunpy-gallery { padding: 20px; }
 #sunpy-gallery img { height: 200px; }
 #sunpy-gallery img:hover { box-shadow: #666 0px 0px 10px; }
 #sunpy-gallery h2 { text-transform: capitalize; }
+#sunpy-gallery .gallery-section { margin: 20px 0px; }
+
