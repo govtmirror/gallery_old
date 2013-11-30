@@ -48,8 +48,9 @@ $(function() {
 
         $.each(data.sections, function (section, entries) {
             // Add section header
-            gallery.append("<h2>" + section + "</h2>");
-            subsection = $('<div class="gallery-section">').appendTo(gallery);
+            section_title = section.replace(/^[\d]*-/, '');
+            gallery.append("<h2>" + section_title + "</h2>");
+            subsection = $('<div class="gallery-section row">').appendTo(gallery);
 
             $.each(entries, function(i, notebook) {
                 // @TODO: either decide to use only PNG, or detect

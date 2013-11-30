@@ -24,7 +24,7 @@ from IPython.display import Image
 def main():
     """Main"""
     # Each sub-directory corresponds to one section in the gallery
-    dirs = [x for x in os.listdir() if os.path.isdir(x)]
+    dirs = sorted([x for x in os.listdir() if os.path.isdir(x)])
     dirs.remove('resources')
     dirs.remove('.git')
 
