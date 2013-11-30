@@ -54,11 +54,12 @@ def main():
             convert_notebook(filepath)
             extract_notebook_thumbnail(filepath)
 
-        # Output gallery as JSON
-        gallery_json = json.dumps(gallery)
+    # Output gallery as JSON
+    os.chdir('..')
+    gallery_json = json.dumps(gallery)
 
-        with open('gallery.json', 'w') as fp:
-            fp.write(gallery_json)
+    with open('gallery.json', 'w') as fp:
+        fp.write(gallery_json)
 
 def convert_notebook(filepath):
     """Convert a single notebook to HTML"""
