@@ -10,13 +10,28 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/bootstrap-cosmo.min.css">
+    <link rel="stylesheet" href="resources/css/sticky-footer.css">
     <link rel="stylesheet" href="resources/css/sunpy-gallery.css">
 </head>
 <body>
-<h1>SunPy Example Gallery</h1>
 
-<!-- Gallery Examples -->
-<div id='sunpy-gallery'></div>
+<!-- Main contents -->
+<div id='wrap'>
+    <!-- Header -->
+    <h1>SunPy Example Gallery</h1>
+
+    <!-- Gallery Examples -->
+    <div id='sunpy-gallery'></div>
+</div>
+
+<!-- footer -->
+<div id="footer">
+    <div class="container">
+        <p class="text-muted credit">
+            Generated using <a href="http://www.sunpy.org">SunPy</a>
+         </p>
+    </div>
+</div>
 
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery.js"></script>
@@ -26,12 +41,12 @@
 <script type='text/javascript'>
 $(function() {
     $.getJSON("gallery.json", function(data) {
-        var gallery = $('#sunpy-gallery');
+        var gallery = $('#sunpy-gallery'),
 
         // Entry HTML parts
-        var entry_div = "<div class='col-xs-12 col-sm-6 col-lg-2'>";
+        entry_div = "<div class='col-xs-12 col-sm-6 col-lg-2'>";
 
-        $.each(data, function (section, entries) {
+        $.each(data.sections, function (section, entries) {
             // Add section header
             gallery.append("<h2>" + section + "</h2>");
 
@@ -48,6 +63,9 @@ $(function() {
                 gallery.append(entry);
             })
         });
+
+        // Add SunPy version
+        $("#footer a").text("SunPy " + data.meta.sunpy);
     });
 });
 </script>

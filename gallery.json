@@ -1,1 +1,1 @@
-{"basics": ["01-hello_sunpy"]}
+{"meta": {"sunpy": "0.3.2"}, "sections": {"basics": ["01-hello_sunpy"]}}

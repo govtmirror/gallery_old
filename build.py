@@ -13,6 +13,7 @@ References
 import os
 import glob
 import json
+import sunpy
 import IPython.nbconvert
 from IPython.config import Config
 from IPython.nbformat import current as nbformat
@@ -30,6 +31,11 @@ def main():
     # We will construct a dictionary representation of the gallery
     gallery = {}
 
+    gallery['meta'] = {
+        'sunpy': sunpy.__version__
+    }
+    gallery['sections'] = {}
+
     # Process sections
     for directory in dirs:
         os.chdir(directory)
@@ -37,7 +43,7 @@ def main():
         # Section title
         #section_name = directory.replace("_", " ").title()
         section_name = directory
-        gallery[section_name] = []
+        gallery['sections'][section_name] = []
 
         print("=" * 40)
         print("Processing section: %s" % section_name)
@@ -49,7 +55,7 @@ def main():
 
             # Add entry to gallery dict
             basename = os.path.splitext(filepath)[0]
-            gallery[section_name].append(basename)
+            gallery['sections'][section_name].append(basename)
 
             # Generate HTML and thumbnail image
             convert_notebook(filepath)
