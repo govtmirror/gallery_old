@@ -12,3 +12,5 @@ TODO
     - generate thumbnails
     - generate a JSON file with entries
 3. Load gallery entries via jQuery
+4. Decode base64 images to generate thumbnails?
+5. Add version info at botom of each entry?
