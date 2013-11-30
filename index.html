@@ -49,6 +49,7 @@ $(function() {
         $.each(data.sections, function (section, entries) {
             // Add section header
             gallery.append("<h2>" + section + "</h2>");
+            subsection = $('<div class="gallery-section">').appendTo(gallery);
 
             $.each(entries, function(i, notebook) {
                 // @TODO: either decide to use only PNG, or detect
@@ -60,8 +61,11 @@ $(function() {
                     "<img src='" + basefile + ".png' /></a></div>";
 
                 // Add to output
-                gallery.append(entry);
+                subsection.append(entry);
             })
+
+            // End of gallery section
+            gallery.append('</div>');
         });
 
         // Add SunPy version
